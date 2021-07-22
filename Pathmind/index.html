@@ -8,7 +8,7 @@
 	<meta name="description" content="Personal Page">
 	<meta name="author" content="Thomas Voss">
 
-	<title>Thomas Voss - Hompage</title>
+	<title>Thomas Voss - Pathmind Example</title>
 
    	<!-- Custom fonts for this theme -->
 	<link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -54,33 +54,175 @@
 
 <!-- About Section -->
 <section class="page-section bg-light text-black mb-0" id="about">
-    <div class="container">
+  <div class="container">
     <!-- About Section Heading -->
-    <h2 class="page-section-heading text-center text-uppercase text-black">Testcase</h2>
+    <h2 class="page-section-heading text-center text-uppercase text-black">Simulation Modell</h2>
 
     <!-- Icon Divider -->
     <div class="divider-custom divider-dark">
-        <div class="divider-custom-line"></div>
+      <div class="divider-custom-line"></div>
     </div>
 
+    <div class="contrainer">
+      All details can be found here: <br>
+      <br>
+      Voß, Thomas et al. <br>
+      Outperformed by a Computer? - Comparing Human Decisions to Reinforcement Learning Agents, Assigning Lot Sizes in a Learning Factory (June 3, 2021). <br>
+      Proceedings of the Conference on Learning Factories (CLF) 2021 <br>
+      Available at <a href="http://dx.doi.org/10.2139/ssrn.3859196" target="_blank"> http://dx.doi.org/10.2139/ssrn.3859196 </a>
+
     </div>
+    
+    <!-- Icon Divider -->
+    <div class="divider-custom divider-dark">
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="https://cloud.anylogic.com/assets/embed?modelId=32b10382-084a-48fa-82ab-e8926191bee8"></iframe>
+    </div>     
+  </div>
+</section>
+
+<section class="page-section bg-dark text-black mb-0" id="CV">
+  <h2 class="page-section-heading text-center text-uppercase text-white">POLICY SERVING</h2>
+    <!-- Icon Divider -->
+
+    <div class="divider-custom divider-light">
+  <div class="divider-custom-line"></div>
+</div>
+
+<div class="container">
+  <div class="card">    
+    <div class="card-body">
+
+      <h4 class="header-title">Query Policy to get Predicted Action</h4>
+      <p class="text-muted font-14">
+        Use the fields below to experiment with different inputs and see how the policy reacts.
+      </p>
+
+      <!-- This is where the obersations begin, given the 9 obs from the LF 3 collums with 3 elements should work
+      for repsonsive design they should stack 
+      Have to make sure that all 9 elemnts are in the same form -->
+
+      
+        
+      <div class="container">
+        <div class="row">  
+          <div class="col">
+            <h4 class="text-uppercase mb-4">STOCK</h4>
+            <p class="lead mb-0">
+              <form>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="SRacer" placeholder="Stock Racer">
+                </div>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="SBullBar" placeholder="Stock BullBar">
+                </div>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="SRollCage" placeholder="Stock RollCage">
+                </div>
+              </form>
+            </p>
+          </div>
+  
+          <div class="col">
+            <h4 class="text-uppercase mb-4">ORDERS</h4>
+            <p class="lead mb-0">
+              <form>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="ORacer" placeholder="Orders Racer">
+                </div>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="OBullBar" placeholder="Orders BullBar">
+                </div>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="ORollCage" placeholder="Orders RollCage">
+                </div>
+              </form>
+            </p>         
+          </div>
+
+          <div class="col">
+            <h4 class="text-uppercase mb-4">WIP</h4>
+            <p class="lead mb-0">
+              <form>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="WRacer" placeholder="WIP Racer">
+                </div>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="WBullBar" placeholder="WIP BullBar">
+                </div>
+                <div class="form-group">
+                  <input type="number " class="form-control" id="WRollCage" placeholder="WIP RollCage">
+                </div>
+              </form>
+            </p>     
+          </div>
+        </div>
+
+          <div class="form-group row">
+            <div class="col-lg">
+              <!--<form onsubmit="submission()">
+              <button class="btn btn-primary" type="submit">Get Policy Prediction</button>
+              </form> -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#success-alert-modal">
+                Get Policy Prediction
+              </button> 
+            
+   
+              <div class="modal fade" id="success-alert-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Coming Soon!</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+
+                    <div class="modal-body">
+                      In future versions of this demo, we will show what predictions look like here.
+
+                    </div>
+      
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" id="btn-predict" class="btn btn-primary" >Predict next Action </button>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+  
+
+    </div>
+  </div>           
+</div>
+
 </section>
 
 </body>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="../vendor/jquery/jquery.min.js"></script>
-  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="../vendor/jquery/jquery.min.js"></script>
+<script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Plugin JavaScript -->
-  <script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Plugin JavaScript -->
+<script src="../vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Contact Form JavaScript -->
-  <script src="../js/jqBootstrapValidation.js"></script>
-  <script src="../js/contact_me.js"></script>
+<!-- Contact Form JavaScript -->
+<script src="../js/jqBootstrapValidation.js"></script>
+<script src="../js/contact_me.js"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="../js/freelancer.min.js"></script>
+<script src="../js/freelancer.min.js"></script>
 
 </body>
   <!-- Footer -->
@@ -121,4 +263,20 @@
     </div>
 
 </footer>
+
+
+  <!-- Copyright Section -->
+  <section class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; Thomas Voss 2020</small>
+    </div>
+  </section>
+
+  <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+  <div class="scroll-to-top d-lg-none position-fixed ">
+    <a class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
+
 </html>
